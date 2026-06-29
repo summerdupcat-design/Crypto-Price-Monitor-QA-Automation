@@ -46,18 +46,30 @@ Validators
 Reporter
         ↓
 Console Output
+```
 
-# Run Project
-```npm install
-node src/app.js```
+## Run Project
 
-# Run Test
-```npm test```
+```bash
+npm install
+node src/app.js
+```
 
-# Test Result
+## Run Test
+
+```bash
+npm test
+```
+
+## Test Result
+
 Current test coverage:
-```Test Suites: 4 passed, 4 total
-Tests:       13 passed, 13 total```
 
-# CI
+```text
+Test Suites: 4 passed, 4 total
+Tests:       13 passed, 13 total
+```
+
+## CI
+
 This project uses GitHub Actions to automatically run Jest tests on every push to the main branch.
