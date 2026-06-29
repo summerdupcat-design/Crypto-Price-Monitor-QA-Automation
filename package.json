@@ -1,0 +1,17 @@
+{
+  "name": "crypto-price-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^30.4.2",
+    "save-dev": "^0.0.1-security",
+    "ws": "^8.21.0"
+  }
+}
