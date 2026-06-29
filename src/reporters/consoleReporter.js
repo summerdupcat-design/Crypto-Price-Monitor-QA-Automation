@@ -1,13 +1,13 @@
 function reportResults(ticker,results){
     console.log("--------------------------------");
-    console.log("Symbol:", ticker.instId);
+    console.log('Symbol:', ticker.symbol);
     
     results.forEach(result => {
         // 如果验证器通过，则打印✅，否则打印❌
         if(result.passed){
-            console.log(`✅ ${result.validator}`);
+            console.log(`✅ ${ticker.exchange}:${result.validator}`);
         }else{
-            console.log(`❌ ${result.validator}: ${result.reason}`);
+            console.log(`❌ ${ticker.exchange}:${result.validator}: ${result.reason}`);
         }
     });
     console.log("--------------------------------");

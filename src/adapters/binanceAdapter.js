@@ -1,16 +1,19 @@
-function adaptBinanceTickers(ticker){
+function adaptBinanceTickers(ticker) {
+    const bid = Number(ticker.b);
+    const ask = Number(ticker.a);
+    const price = ticker.c ? Number(ticker.c) : (bid + ask) / 2;
+
     return {
-        exchange: 'Binance',
-        symbol: ticker.symbol,
-        price: Number(ticker.price),
-        ask: Number(ticker.ask),
-        bid: Number(ticker.bid),
-        last: Number(ticker.last),
-        timestamp: Number(ticker.timestamp),
-        raw:ticker
+        exchange: 'BINANCE',
+        symbol: "BTC-USDT",
+        price,
+        ask,
+        bid,
+        timestamp: ticker.E ? Number(ticker.E) : Date.now(),
+        raw: ticker
     };
 }
 
-module.exports = {  
+module.exports = {
     adaptBinanceTickers
 };

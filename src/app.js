@@ -1,7 +1,8 @@
-// 连接WebSocket
-const {connectTicker} = require('./websocket/client');
+// 导入OKX Ticker
+const {startOKXTicker} = require('./websocket/okxClient');
+const {startBinanceTicker} = require('./websocket/binanceClient');
 
-const OKX_WS_URL = 'wss://ws.okx.com:8443/ws/v5/public';
-
-// 连接WebSocket
-connectTicker(OKX_WS_URL);
+// 启动OKX Ticker
+startOKXTicker();
+// 启动Binance Ticker
+startBinanceTicker();

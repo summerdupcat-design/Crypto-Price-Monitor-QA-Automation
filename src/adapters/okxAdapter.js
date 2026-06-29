@@ -5,7 +5,6 @@ function adaptOKXTickers(ticker){
         price: Number(ticker.last),
         ask: Number(ticker.askPx),
         bid: Number(ticker.bidPx),
-        last: Number(ticker.last),
         timestamp: Number(ticker.ts),
         raw:ticker
     };

@@ -7,7 +7,7 @@ function buildHash(ticker){
 }
 function validateDuplicate(ticker){
     // 获取当前symbol的key
-    const key = ticker.instId;
+    const key = ticker.symbol;
     // 获取市场状态
     const state = getState(key);
     // 构建哈希值
