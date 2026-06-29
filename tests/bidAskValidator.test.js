@@ -5,9 +5,9 @@ describe ('BidAsk Validator', () => {
     // 测试ask和bid是否为数字
     test ('should return false if ask or bid is not a number', () => {
         const ticker = {
-            instId: 'BTC-USDT',
-            askPx: 'abc',
-            bidPx: '100'
+            symbol: 'BTC-USDT',
+            ask: 'abc',
+            bid: '100'
         };
         const result = validateBidAsk(ticker);
         expect(result.passed).toBe(false);
@@ -18,9 +18,9 @@ describe ('BidAsk Validator', () => {
     // 测试ask和bid是否大于0
     test('should return false if ask or bid is not greater then 0',()=>{
     const ticker = {
-        instId: 'BTC-USDT',
-        askPx: '0',
-        bidPx: '100'
+        symbol: 'BTC-USDT',
+        ask: '0',
+        bid: '100'
     };
     const result = validateBidAsk(ticker);
     expect(result.passed).toBe(false);
@@ -31,9 +31,9 @@ describe ('BidAsk Validator', () => {
     // 测试ask是否小于bid
     test('should return false if ask is less than bid',()=>{
     const ticker = {
-        instId: 'BTC-USDT',
-        askPx: '100',
-        bidPx: '200'
+        symbol: 'BTC-USDT',
+        ask: '99',
+        bid: '100'
     };
     const result = validateBidAsk(ticker);
     expect(result.passed).toBe(false);
@@ -44,9 +44,9 @@ describe ('BidAsk Validator', () => {
     // 测试价差大于5%
     test('should return false if spread is greater than 5%',()=>{
     const ticker = {
-        instId: 'BTC-USDT',
-        askPx: '106',
-        bidPx: '100'
+        symbol: 'BTC-USDT',
+        ask: '106',
+        bid: '100'
     };
     const result = validateBidAsk(ticker);
     expect(result.passed).toBe(false);
@@ -57,9 +57,9 @@ describe ('BidAsk Validator', () => {
     // 测试价差小于等于5%
     test('should pass when spread is less than 5%',()=>{
         const ticker = {
-            instId: 'BTC-USDT',
-            askPx: '105',
-            bidPx: '100'
+            symbol: 'BTC-USDT',
+            ask: '104',
+            bid: '100'
         };
         const result = validateBidAsk(ticker);
         expect(result.passed).toBe(true);

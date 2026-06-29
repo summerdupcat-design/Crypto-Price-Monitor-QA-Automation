@@ -1,7 +1,7 @@
 let lastTimestamp = 0;
 
 function validateTimestamp(ticker) {
-    const currentTimestamp = Number(ticker.ts);
+    const currentTimestamp = Number(ticker.timestamp);
 
     if (Number.isNaN(currentTimestamp)) {
         // 验证时间戳是否为数字

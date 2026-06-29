@@ -1,7 +1,7 @@
 
 function validatePrice(ticker){
     // 获取当前价格
-    const currentPrice = Number(ticker.last);
+    const currentPrice = Number(ticker.price);
     if(Number.isNaN(currentPrice)){
         // 验证价格是否为数字
         return{

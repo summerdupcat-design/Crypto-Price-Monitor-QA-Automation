@@ -18,8 +18,8 @@ describe('Price Validator', () => {
     // 测试价格是否为0
     test('should return false if price is 0', () => {
         const ticker = {
-            instId: 'BTC-USDT',
-            last: '0'
+            symbol: 'BTC-USDT',
+            price: '0'
         };
         const result = validatePrice(ticker);
         // 验证返回为False，验证器为PriceValidator
@@ -31,8 +31,8 @@ describe('Price Validator', () => {
     // 测试价格是否大于0
     test('should pass wher price is grater than 0',()=>{
         const ticker = {
-            instId: 'BTC-USDT',
-            last: '100'
+            symbol: 'BTC-USDT',
+            price: '100'
         };
         const result = validatePrice(ticker);
         // 验证返回为True，验证器为PriceValidator

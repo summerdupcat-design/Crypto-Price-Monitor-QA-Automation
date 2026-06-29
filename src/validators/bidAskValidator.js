@@ -1,8 +1,8 @@
 // 最大价差百分比
 const {validationConfig} = require('../config/validationConfig');
  function validateBidAsk(ticker){
-    const ask = Number(ticker.askPx);
-    const bid = Number(ticker.bidPx);
+    const ask = Number(ticker.ask);
+    const bid = Number(ticker.bid);
 
     if(Number.isNaN(ask) || Number.isNaN(bid)){
         // 验证ask和bid是否为数字
