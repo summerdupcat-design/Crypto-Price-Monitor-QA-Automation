@@ -27,7 +27,7 @@ function getSymbolState(symbol){
 }
 
 // 更新最后一条Ticker
-function updaeteLastTicker(ticker){
+function updateLastTicker(ticker){
     const state = getExchangeState(ticker.symbol,ticker.exchange);
     state.lastTicker = ticker;
 }
@@ -47,7 +47,7 @@ function clearState(){
 module.exports = { 
     getExchangeState,
     getSymbolState,
-    updaeteLastTicker,
+    updateLastTicker,
     updateLastHash,
     clearState
 };

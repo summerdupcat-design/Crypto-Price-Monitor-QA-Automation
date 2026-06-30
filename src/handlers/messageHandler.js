@@ -3,7 +3,8 @@
  // 报告结果
  const {reportResults} = require('../reporters/consoleReporter');
  const {adaptTicker} = require('../adapters/adapterManager');
- const {updaeteLastTicker} = require('../state/marketState');
+ const {updateLastTicker} = require('../state/marketState');
+ const {generateHtmlReport} = require('../reporters/htmlReporter');
  // 处理Ticker消息
  function processTicker(exchange, rawTicker) {
     console.log('Received Ticker message:');
@@ -13,8 +14,10 @@
     const results = runValidators(standardTicker);
     // 报告结果
     reportResults(standardTicker, results);
+    // 生成HTML报告
+    generateHtmlReport(standardTicker, results);
     // 更新最后一条Ticker
-    updaeteLastTicker(standardTicker);
+    updateLastTicker(standardTicker);
  }
 // 处理消息
  function handleMessage(exchange, message) {

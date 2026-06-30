@@ -2,12 +2,14 @@ const {validateTimestamp} = require('./timestampValidator');
 const {validatePrice} = require('./priceValidator');
 const {validateDuplicate} = require('./duplicateValidator');
 const {validateBidAsk} = require('./bidAskValidator');
+const {validateBenchmark} = require('./benchmarkValidator');
 
 const validators = [
     validateTimestamp,
     validatePrice,
     validateDuplicate,
-    validateBidAsk
+    validateBidAsk,
+    validateBenchmark
 ];
 
 function runValidators(ticker){
